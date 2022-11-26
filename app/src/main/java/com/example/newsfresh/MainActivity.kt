@@ -1,5 +1,6 @@
 package com.example.newsfresh
 
+import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -11,18 +12,11 @@ import android.widget.Toolbar
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.android.volley.Request
-import com.android.volley.Response
-import com.android.volley.toolbox.JsonObjectRequest
-import com.android.volley.toolbox.Volley
-import androidx.browser.customtabs.CustomTabsIntent
 import androidx.core.view.GravityCompat
-import androidx.drawerlayout.widget.DrawerLayout
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.newsfresh.databinding.ActivityMainBinding
 import com.example.newsfresh.models.Article
-import com.google.android.material.navigation.NavigationView
 
 
 class MainActivity : AppCompatActivity(), newsitemclick {
@@ -112,9 +106,12 @@ class MainActivity : AppCompatActivity(), newsitemclick {
 
     override fun onitemclick(item: Article) {
         val url=item.url
-        val builder = CustomTabsIntent.Builder()
-        val customTabsIntent = builder.build()
-        customTabsIntent.launchUrl(this, Uri.parse(url))
+        var intent=Intent(this,web_view::class.java)
+        intent.putExtra("key",url)
+        startActivity(intent)
+//        val builder = CustomTabsIntent.Builder()
+//        val customTabsIntent = builder.build()
+//        customTabsIntent.launchUrl(this, Uri.parse(url))
     }
     fun fetch(string: String="All"){
         viewmodel.fetchnews(string)
