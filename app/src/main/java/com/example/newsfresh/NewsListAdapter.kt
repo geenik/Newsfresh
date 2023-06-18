@@ -5,17 +5,17 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.example.newsfresh.models.Article
 import android.view.animation.AlphaAnimation
-import androidx.core.net.ParseException
+import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
 
-class NewsListAdapter(private val listener: newsitemclick):RecyclerView.Adapter<Newsviewholder>() {
+class NewsListAdapter(private val listener: newsitemclick): RecyclerView.Adapter<Newsviewholder>() {
     private val items:ArrayList<Article> =ArrayList()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Newsviewholder {
           val view =LayoutInflater.from(parent.context).inflate(R.layout.item_news,parent,false)
@@ -43,7 +43,6 @@ class NewsListAdapter(private val listener: newsitemclick):RecyclerView.Adapter<
         items.addAll(updatedNews)
         notifyDataSetChanged()
     }
-
     override fun getItemCount(): Int {
         return items.size
 

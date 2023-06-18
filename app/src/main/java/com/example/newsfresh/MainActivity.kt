@@ -1,14 +1,9 @@
 package com.example.newsfresh
 
 import android.content.Intent
-import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.renderscript.ScriptGroup
-import android.util.Log
-import android.view.Gravity
 import android.view.MenuItem
-import android.widget.Toolbar
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -36,13 +31,13 @@ class MainActivity : AppCompatActivity(), newsitemclick {
         fetch()
         val recyclerView=findViewById<RecyclerView>(R.id.recycleview)
         recyclerView.layoutManager=LinearLayoutManager(this)
-        (viewmodel as mainviewmodel).newsdata.observe(this, Observer {
+        (viewmodel).newsdata.observe(this, {
             madapter.updatednews(it.articles as ArrayList<Article>)
         })
         madapter= NewsListAdapter(this)
         recyclerView.adapter=madapter
 
-        //naviagtion view
+        //navigation view
 
         toggle= ActionBarDrawerToggle(this,Bind.root,R.string.open,R.string.close)
         Bind.root.addDrawerListener(toggle)
@@ -109,9 +104,6 @@ class MainActivity : AppCompatActivity(), newsitemclick {
         var intent=Intent(this,web_view::class.java)
         intent.putExtra("key",url)
         startActivity(intent)
-//        val builder = CustomTabsIntent.Builder()
-//        val customTabsIntent = builder.build()
-//        customTabsIntent.launchUrl(this, Uri.parse(url))
     }
     fun fetch(string: String="All"){
         viewmodel.fetchnews(string)

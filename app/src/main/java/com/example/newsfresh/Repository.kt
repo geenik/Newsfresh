@@ -25,7 +25,6 @@ class Repository(private val newsservice: newsapi) {
        if(resultnews?.body() != null){
         newsdata.postValue(resultnews.body())
        }
-       Log.d("deb", newsdata.toString())
    }
 
 }

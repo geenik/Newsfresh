@@ -12,12 +12,10 @@ import kotlinx.coroutines.launch
 class mainviewmodel(private val repository:Repository):ViewModel() {
     lateinit var newsdata:LiveData<news>
     fun fetchnews(string: String){
-        Log.d("deb", "fetchnews: ")
         GlobalScope.launch(IO) {
             repository.getnews(string)
         }
         newsdata=repository.Newsdata
     }
-
 
 }
