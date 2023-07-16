@@ -10,9 +10,13 @@ NewsFresh is an Android application that allows users to browse and read news ar
 - Navigation drawer for easy category selection.
 
 ## Screenshots
-![WhatsApp Image 2023-06-18 at 18 22 16](https://github.com/geenik/Newsfresh/assets/92754155/29a5535c-faa5-4511-a233-47ce07e233b0)
-![WhatsApp Image 2023-06-18 at 18 22 16 (1)](https://github.com/geenik/Newsfresh/assets/92754155/fe23c1c4-02be-42c2-bbba-8466f7d6250f)
-![WhatsApp Image 2023-06-18 at 18 22 15](https://github.com/geenik/Newsfresh/assets/92754155/9f2de1db-17a6-40fd-81d1-884fa561c17f)
+<img src="https://github.com/geenik/Newsfresh/assets/92754155/29a5535c-faa5-4511-a233-47ce07e233b0" width="180" height="350">
+
+
+<img src="https://github.com/geenik/Newsfresh/assets/92754155/fe23c1c4-02be-42c2-bbba-8466f7d6250f" width="180" height="350">
+
+
+<img src="https://github.com/geenik/Newsfresh/assets/92754155/9f2de1db-17a6-40fd-81d1-884fa561c17f" width="180" height="350">
 
 ## Setup
 
